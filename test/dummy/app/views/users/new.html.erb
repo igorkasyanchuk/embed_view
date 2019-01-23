@@ -1,0 +1,9 @@
+<h1>New User</h1>
+
+<%#= render 'form', user: @user %>
+
+<% user = @user %>
+
+<%= embed_view "_form.html.erb" %>
+
+<%= link_to 'Back', users_path %>

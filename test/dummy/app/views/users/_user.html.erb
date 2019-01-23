@@ -1,0 +1,7 @@
+<tr>
+  <td><strong><%= user.name %></strong></td>
+  <td><%= user.age %></td>
+  <td><%= link_to 'Show', user %></td>
+  <td><%= link_to 'Edit', edit_user_path(user) %></td>
+  <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
