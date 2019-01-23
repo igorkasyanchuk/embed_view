@@ -1,8 +1,36 @@
 # EmbedView
 
+Improve application performance by 5-20% (depending on your views and layouts) without major code changes.
+
+Rails have slow rendering, expecially when you have view and many partials included inside.
+
+This gem simply embeds views into another views. Works similar to partials, but instead of rendering main view, partials - it's creates a bigger view with content from partials and renders all together.
+
+So if you have a pretty stable app, rarely changed ERB views(_header, _footer, _ga, _etc...) you can embed them in main view/layout and render together.
+
+Such small tweak could give 5-20% boost for performance.
 
 ## Usage
-How to use my plugin.
+
+Currently works only with ERB templates.
+
+Instead of:
+
+```
+  <%= render '/shared/header' %>
+```
+
+just write:
+
+```
+  <%= embed_view "../shared/_header.html.erb" %>
+```
+
+Please note that this is not a typical helper. This is just a meta tag which will be replaced with content from file.
+
+There are no familiar "locals", "collection", etc things from "partial". 
+
+During development just follow the rule that content from embedded file is inside this file. So all variables available before `embed_view` will be available in inserted file.
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -21,6 +49,11 @@ Or install it yourself as:
 $ gem install embed_view
 ```
 
+## Known issues
+
+- if you have an issue in code in embedded file you won't see correct line with error
+- not tested with older Rails (only with Rails 5.2)
+
 ## TODO
 
 - better readme with many samples
@@ -35,7 +68,7 @@ $ gem install embed_view
 - absolute path (using Rails.root)
 - more tests (check that content from partials was rendered)
 - travis.ci
-- compare numbers, visualize in readme
+- compare numbers(benchmark), visualize in readme
 - mention in readme links to 2 stagings + source code on heroku
 - reame in samples apps with link to heroku
 
