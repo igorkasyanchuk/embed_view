@@ -1,12 +1,12 @@
 # EmbedView
 
-Improve application performance by 5-20% (depending on your views and layouts) without major code changes.
+Improve application performance by 5-20% (depending on your logic, views and layouts) without major code changes.
 
 Rails have slow rendering, expecially when you have view and many partials included inside.
 
 This gem simply embeds views into another views. Works similar to partials, but instead of rendering main view, partials - it's creates a bigger view with content from partials and renders all together.
 
-So if you have a pretty stable app, rarely changed ERB views(_header, _footer, _ga, _etc...) you can embed them in main view/layout and render together.
+So if you have a pretty stable app, rarely changed ERB views(_header, _footer, _modal, _ga, _etc...) you can embed them in main view/layout and render together.
 
 Such small tweak could give 5-20% boost for performance.
 
@@ -32,6 +32,8 @@ There are no familiar "locals", "collection", etc things from "partial".
 
 During development just follow the rule that content from embedded file is inside this file. So all variables available before `embed_view` will be available in inserted file.
 
+Path to file must be relative to file where it's embeds.
+
 ## Installation
 Add this line to your application's Gemfile:
 
@@ -49,8 +51,30 @@ Or install it yourself as:
 $ gem install embed_view
 ```
 
-## Known issues
+## Sample
 
+Sample of rendering from dummy app: https://github.com/igorkasyanchuk/embed_view/tree/master/test/dummy/app/views
+
+```
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  User Load (0.2ms)  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:51
+  embed_view: ../shared/_header.html.erb
+  embed_view: ../shared/_footer.html.erb
+  embed_view: _ga.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+   (0.1ms)  SELECT COUNT(*) FROM "users"
+  ↳ app/views/layouts/application.html.erb:20
+  User Load (0.2ms)  SELECT  "users".* FROM "users" ORDER BY random() LIMIT ?  [["LIMIT", 5]]
+  ↳ app/views/layouts/application.html.erb:428
+Completed 200 OK in 38ms (Views: 34.9ms | ActiveRecord: 0.5ms)
+```
+
+## Known issues & limitations
+
+- support only ERB
 - if you have an issue in code in embedded file you won't see correct line with error
 - not tested with older Rails (only with Rails 5.2)
 
