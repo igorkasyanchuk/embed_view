@@ -1,4 +1,4 @@
-# EmbedView
+# EmbedView - easy way to improve by 5-20% performance
 
 Improve application performance by 5-20% (depending on your logic, views and layouts) without major code changes.
 
@@ -8,7 +8,7 @@ This gem simply embeds views into another views. Works similar to partials, but 
 
 So if you have a pretty stable app, rarely changed ERB views(_header, _footer, _modal, _ga, _etc...) you can embed them in main view/layout and render together.
 
-Such small tweak could give 5-20% boost for performance.
+**Such small tweak could give 5-20% boost for performance.**
 
 ## Usage
 
