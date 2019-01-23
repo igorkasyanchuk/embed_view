@@ -34,6 +34,8 @@ During development just follow the rule that content from embedded file is insid
 
 Path to file must be relative to file where it's embeds.
 
+**Note:** Only this is correct syntax `<%= embed_view "../shared/_header.html.erb" %>`. Specify relative path to file with real filename.
+
 ## Installation
 Add this line to your application's Gemfile:
 
