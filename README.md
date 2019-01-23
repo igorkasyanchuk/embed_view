@@ -6,7 +6,7 @@ Rails have slow rendering, expecially when you have view and many partials inclu
 
 This gem simply embeds views into another views. Works similar to partials, but instead of rendering main view, partials - it's creates a bigger view with content from partials and renders all together.
 
-So if you have a pretty stable app, rarely changed ERB views(_header, _footer, _ga, _etc...) you can embed them in main view/layout and render together.
+So if you have a pretty stable app, rarely changed ERB views(_header, _footer, _modal, _ga, _etc...) you can embed them in main view/layout and render together.
 
 Such small tweak could give 5-20% boost for performance.
 
