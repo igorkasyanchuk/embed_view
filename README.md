@@ -26,7 +26,7 @@ just write:
   <%= embed_view "../shared/_header.html.erb" %>
 ```
 
-Please note that this is not a typical helper. This is just a meta tag which will be replaced with content from file.
+**Please note** that this is not a typical helper. This is just a meta tag which will be replaced with content from file.
 
 There are no familiar "locals", "collection", etc things from "partial". 
 
