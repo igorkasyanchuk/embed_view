@@ -8,6 +8,8 @@ This gem simply embeds views into another views. Works similar to partials, but 
 
 So if you have a pretty stable app, rarely changed ERB views(_header, _footer, _modal, _ga, _sharethis, _etc...) you can embed them in main view/layout and render together.
 
+[![Sample](https://github.com/igorkasyanchuk/embed_view/blob/master/docs/download.png?raw=true)](https://github.com/igorkasyanchuk/embed_view/blob/master/docs/download.png?raw=true)
+
 **Such small tweak could give 5-20% boost for performance.**
 
 ## Usage
@@ -54,8 +56,6 @@ $ gem install embed_view
 ```
 
 ## Sample
-
-[![Sample](https://github.com/igorkasyanchuk/embed_view/blob/master/docs/download.png?raw=true)](https://github.com/igorkasyanchuk/embed_view/blob/master/docs/download.png?raw=true)
 
 https://boiling-falls-90100.herokuapp.com/ - simple app without this gem, typical to many apps (code https://github.com/BogdanBusko/erb_test)
 
