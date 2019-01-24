@@ -16,13 +16,13 @@ Currently works only with ERB templates.
 
 Instead of:
 
-```
+```erb
   <%= render '/shared/header' %>
 ```
 
 just write:
 
-```
+```erb
   <%= embed_view "../shared/_header.html.erb" %>
 ```
 
@@ -73,6 +73,26 @@ Processing by UsersController#show as HTML
   ↳ app/views/layouts/application.html.erb:428
 Completed 200 OK in 38ms (Views: 34.9ms | ActiveRecord: 0.5ms)
 ```
+
+**Before**
+
+```erb
+  <tbody>
+    <% @users.each do |user| %>
+      <%= render '/users/user', user: user %>
+    <% end %>
+  </tbody>
+```  
+
+**After** (see that no variables are passed, because "user" variable is already defined)
+
+```erb
+  <tbody>
+    <% @users.each do |user| %>
+      <%= embed_view "_user.html.erb" %>
+    <% end %>
+  </tbody>
+``` 
 
 ## Known issues & limitations
 
