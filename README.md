@@ -55,7 +55,13 @@ $ gem install embed_view
 
 ## Sample
 
-Sample of rendering from dummy app: https://github.com/igorkasyanchuk/embed_view/tree/master/test/dummy/app/views
+[![Sample](https://github.com/igorkasyanchuk/embed_view/blob/master/docs/download.png?raw=true)](https://github.com/igorkasyanchuk/embed_view/blob/master/docs/download.png?raw=true)
+
+https://boiling-falls-90100.herokuapp.com/ - simple app without this gem, typical to many apps (code https://github.com/BogdanBusko/erb_test)
+
+https://erbtest2.herokuapp.com/ - the same app but with this gem (code https://github.com/BogdanBusko/erb_test/tree/add-embed-view)
+
+Another sample of rendering from dummy app: https://github.com/igorkasyanchuk/embed_view/tree/master/test/dummy/app/views
 
 ```
 Processing by UsersController#show as HTML
