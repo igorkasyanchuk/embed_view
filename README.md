@@ -129,7 +129,12 @@ Completed 200 OK in 38ms (Views: 34.9ms | ActiveRecord: 0.5ms)
 `wrk -t2 -c2 -d10s http://localhost:3000`
 
 ## Contributing
-Contribution directions go here.
+
+You are welcome to contribute.
+
+Contributors:
+
+- https://github.com/BogdanBusko - created samples, heroku apps and benchmarked them
 
 ## License
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
