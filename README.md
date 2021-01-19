@@ -1,5 +1,7 @@
 # EmbedView - easy way to improve by 5-20% performance
 
+[![RailsJazz](https://github.com/igorkasyanchuk/rails_time_travel/blob/main/docs/my_other.svg?raw=true)](https://www.railsjazz.com)
+
 Improve application performance by 5-20% (depending on your logic, views and layouts) without major code changes.
 
 Rails have slow rendering, expecially when you have view and many partials included inside.
